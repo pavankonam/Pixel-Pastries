@@ -1,18 +1,18 @@
 import os
 import shutil
 import random
-# Define paths
-FOOD_101_DIR = "/Users/pavankonam/Downloads/food-101"  # Path to the original Food-101 dataset
-OUTPUT_DIR = "/Users/pavankonam/Desktop/Gen AI"  # Path to save the filtered dataset
 
-# Revised list of dessert classes
+FOOD_101_DIR = "/Users/pavankonam/Downloads/food-101"  # Path to the original Food-101 dataset
+OUTPUT_DIR = "/Users/pavankonam/Desktop/Gen AI"  # Your working directory
+
+# Selected desserts
 DESSERT_CLASSES = [
     "apple_pie", "bread_pudding", "cannoli", "carrot_cake", "cheesecake",
     "chocolate_cake", "chocolate_mousse", "cup_cakes", "donuts", "ice_cream",
     "macarons", "pancakes", "red_velvet_cake", "strawberry_shortcake", "waffles", "tiramisu"
 ]
 
-# Create output directories
+# Creating output directories
 os.makedirs(os.path.join(OUTPUT_DIR, "train"), exist_ok=True)
 os.makedirs(os.path.join(OUTPUT_DIR, "val"), exist_ok=True)
 os.makedirs(os.path.join(OUTPUT_DIR, "test"), exist_ok=True)
@@ -46,7 +46,7 @@ def split_train_val(train_files, val_ratio=0.2):
         train_split[class_name].append(file)
     
     for class_name, files in train_split.items():
-        random.shuffle(files)  # Shuffle the files for randomness
+        random.shuffle(files)  # Shuffling the files for randomness
         split_idx = int(len(files) * (1 - val_ratio))
         train_split[class_name] = files[:split_idx]
         val_split[class_name] = files[split_idx:]
