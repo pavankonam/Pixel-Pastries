@@ -84,6 +84,7 @@ Pixel-Pastries/
 ├── training_progress.gif      # Gif of the training progress images generated
 ├── gid_search_results.csv     # Results of the Grid Search Performed
 ├── requirements.txt           # Python dependencies for the project
+├── output.log                 # Output of the model
 └── README.md                  # Documentation file describing the project
 
 ```
