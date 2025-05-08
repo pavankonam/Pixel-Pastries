@@ -119,7 +119,7 @@ Below is the comparision results of the Grid Search Performed:
 
 Here’s an gif of how the images were generated for the best hyperparameters in GIF Format:
 
-![BestOutput](training_progress.gif)
+<img src="training_progress.gif" alt="BestOutput" width="600">
 
 For the tensorboard results. Please use the below link
 
