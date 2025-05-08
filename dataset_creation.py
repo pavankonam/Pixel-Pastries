@@ -12,57 +12,27 @@ DESSERT_CLASSES = [
     "macarons", "pancakes", "red_velvet_cake", "strawberry_shortcake", "waffles", "tiramisu"
 ]
 
-# Creating output directories
-os.makedirs(os.path.join(OUTPUT_DIR, "train"), exist_ok=True)
-os.makedirs(os.path.join(OUTPUT_DIR, "val"), exist_ok=True)
-os.makedirs(os.path.join(OUTPUT_DIR, "test"), exist_ok=True)
+# Create output directories
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Read train/test splits
-def read_split(split_file):
-    with open(split_file, "r") as f:
-        return [line.strip() for line in f]
+# Create output directory
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-train_files = read_split(os.path.join(FOOD_101_DIR, "meta", "train.txt"))
-test_files = read_split(os.path.join(FOOD_101_DIR, "meta", "test.txt"))
+# Function to move files for a specific class
+def move_dessert_classes():
+    for class_name in DESSERT_CLASSES:
+        src_dir = os.path.join(FOOD_101_DIR, "images", class_name)
+        dst_dir = os.path.join(OUTPUT_DIR, class_name)
+        
+        # Check if the source directory exists
+        if os.path.exists(src_dir):
+            # Move the entire folder to the output directory
+            shutil.move(src_dir, dst_dir)
+            print(f"Moved folder: {class_name}")
+        else:
+            print(f"Folder not found: {class_name}")
 
-# Function to copy files for a specific split
-def copy_files(split_files, split_name):
-    for file in split_files:
-        class_name = file.split("/")[0]
-        if class_name in DESSERT_CLASSES:
-            src = os.path.join(FOOD_101_DIR, "images", f"{file}.jpg")
-            dst_dir = os.path.join(OUTPUT_DIR, split_name, class_name)
-            os.makedirs(dst_dir, exist_ok=True)
-            dst = os.path.join(dst_dir, f"{file.split('/')[-1]}.jpg")
-            shutil.copy(src, dst)
-
-# Function to split train into train and validation
-def split_train_val(train_files, val_ratio=0.2):
-    train_split, val_split = {}, {}
-    for file in train_files:
-        class_name = file.split("/")[0]
-        if class_name not in train_split:
-            train_split[class_name] = []
-        train_split[class_name].append(file)
-    
-    for class_name, files in train_split.items():
-        random.shuffle(files)  # Shuffling the files for randomness
-        split_idx = int(len(files) * (1 - val_ratio))
-        train_split[class_name] = files[:split_idx]
-        val_split[class_name] = files[split_idx:]
-    
-    return train_split, val_split
-
-# Split train into train and validation
-train_split, val_split = split_train_val(train_files)
-
-# Flatten the splits back into lists
-train_files = [file for files in train_split.values() for file in files]
-val_files = [file for files in val_split.values() for file in files]
-
-# Copy train, val, and test files
-copy_files(train_files, "train")
-copy_files(val_files, "val")
-copy_files(test_files, "test")
+# Move the dessert folders
+move_dessert_classes()
 
 print("Data extraction complete!")
