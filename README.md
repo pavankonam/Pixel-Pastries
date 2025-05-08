@@ -110,6 +110,7 @@ pandas
 ```
 
 ## 🌟 Sample Output
-Here’s an example of the kind of images the GAN can generate after training:
+Here’s an gif of how the images were generated for the best hyperparameters in GIF Format:
+![Best model till now](assets/training_progress.gif)
 
 
