@@ -32,7 +32,6 @@ Image saving and GIF generation over epochs
 
 Model checkpointing
 
-Latent space interpolation (optional)
 
 ## 🔍 Hyperparameter Tuning
 Hyperparameter tuning is done using Grid Search to find optimal settings for:
@@ -45,7 +44,7 @@ Optimizer type
 
 Number of filters in Generator/Discriminator
 
-All tuning logic is implemented in tuner.py.
+All tuning logic is implemented using Grid Search.
 
 ## 📈 MLOps Integration
 We use TensorBoard and Weights & Biases (wandb) to track experiments, log metrics, visualize training progress, and compare runs.
@@ -89,7 +88,7 @@ Pixel-Pastries/
 ## 📦 Installation
 To get started, clone the repo and install dependencies:
 ```bash
-git clone https://github.com/yourusername/pixel-pastries.git
+git clone https://github.com/pavankonam/pixel-pastries.git
 cd pixel-pastries
 pip install -r requirements.txt
 ```
@@ -100,28 +99,14 @@ Here are the required Python packages:
 ``` text
 # requirements.txt
 
-# Core ML libraries
 tensorflow==2.15.0
 keras==2.15.0
-
-# Image processing
-opencv-python
-matplotlib
-Pillow
 numpy
-
-# Evaluation
-scipy
-scikit-image
-tensorflow_hub
-
-# MLOps logging
-tensorboard
+matplotlib
+imageio
 wandb
-
-# Misc
-tqdm
-python-dotenv
+sklearn
+pandas
 ```
 
 ## 🌟 Sample Output
