@@ -12,7 +12,7 @@ To create the custom dessert dataset, run:
 python dataset_creation.py
 ```
 
-This script filters the raw Food-101 dataset and organizes it into train/, val/, and test/ folders for use during training and evaluation.
+This script filters the raw Food-101 dataset for use
 
 ## 🧠 Model Architecture
 The project implements a custom GAN built from scratch using TensorFlow and Keras:
@@ -74,17 +74,16 @@ Latent space interpolation (e.g., from cake to donut)
 🗂️ Project Structure
 ```text
 Pixel-Pastries/
-├── dataset_creation.py        # Script to filter and prepare dessert dataset
-├── gan_model.py               # Generator and Discriminator models
-├── train.py                   # Training loop with logging and checkpointing
-├── test.py                    # Model evaluation and testing
-├── tuner.py                   # Grid search logic for hyperparameter tuning
-├── fid_score.py               # Calculates FID between generated and real images
-├── preprocessing.py           # Preprocessing pipeline for images
-├── utils.py                   # Utility functions (logging, image saving, etc.)
-├── final_run.py               # Final script that integrates all components
-├── requirements.txt           # Python dependencies
-└── README.md                  # This file
+├── dataset_creation.py        # Script to prepare and filter the dessert dataset
+├── config.py                  # Configuration file for constants, paths, and hyperparameters
+├── data_utils.py              # Data loading, preprocessing, and utility functions (e.g., logging, image saving)
+├── models.py                  # Generator and Discriminator model definitions
+├── metrics.py                 # Loss functions, FID calculation, and evaluation metrics
+├── training.py                # Training loop with logging, checkpointing, and visualization
+├── grid_search.py             # Grid search logic for hyperparameter tuning
+├── main.py                    # Entry point script that integrates all components
+├── requirements.txt           # Python dependencies for the project
+└── README.md                  # Documentation file describing the project
 ```
 
 ## 📦 Installation
@@ -128,10 +127,4 @@ python-dotenv
 ## 🌟 Sample Output
 Here’s an example of the kind of images the GAN can generate after training:
 
-## 🚀 Future Work
-- More advanced latent space exploration
-
-- Conditional GANs (e.g., generate a donut vs. a cake)
-
-- Deploying the model as a dessert design assistant web app
 
