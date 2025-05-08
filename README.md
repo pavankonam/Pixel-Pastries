@@ -114,8 +114,11 @@ pandas
 
 ## 🌟 Output
 Below is the comparision results of the Grid Search Performed:
+
 ![Grid Search Results](grid_search_comparision.png)
+
 Here’s an gif of how the images were generated for the best hyperparameters in GIF Format:
+
 ![BestOutput](training_progress.gif)
 
 
