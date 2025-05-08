@@ -15,9 +15,6 @@ DESSERT_CLASSES = [
 # Create output directories
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Create output directory
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
 # Function to move files for a specific class
 def move_dessert_classes():
     for class_name in DESSERT_CLASSES:
