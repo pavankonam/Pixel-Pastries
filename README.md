@@ -121,4 +121,6 @@ Here’s an gif of how the images were generated for the best hyperparameters in
 
 ![BestOutput](training_progress.gif)
 
+For the tensorboard results. Please use the below link
 
+[Tensorboard Results](https://wandb.ai/pavankonam-northwestern-university/gan-dessert-project/runs/0xde0fph?nw=vz4zoiqt0mo)
