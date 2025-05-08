@@ -81,8 +81,11 @@ Pixel-Pastries/
 ├── training.py                # Training loop with logging, checkpointing, and visualization
 ├── grid_search.py             # Grid search logic for hyperparameter tuning
 ├── main.py                    # Entry point script that integrates all components
+├── training_progress.gif      # Gif of the training progress images generated
+├── gid_search_results.csv     # Results of the Grid Search Performed
 ├── requirements.txt           # Python dependencies for the project
 └── README.md                  # Documentation file describing the project
+
 ```
 
 ## 📦 Installation
@@ -109,8 +112,10 @@ sklearn
 pandas
 ```
 
-## 🌟 Sample Output
+## 🌟 Output
+Below is the comparision results of the Grid Search Performed:
+![Grid Search Results](grid_search_comparision.png)
 Here’s an gif of how the images were generated for the best hyperparameters in GIF Format:
-![Best model till now](assets/training_progress.gif)
+![BestOutput](training_progress.gif)
 
 
