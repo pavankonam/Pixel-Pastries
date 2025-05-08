@@ -119,8 +119,8 @@ Below is the comparision results of the Grid Search Performed:
 
 Here’s an gif of how the images were generated for the best hyperparameters in GIF Format:
 
-<img src="training_progress.gif" alt="BestOutput" width="600">
+<img src="training_progress.gif" alt="BestOutput" width="400">
 
 For the tensorboard results. Please use the below link
 
-[Tensorboard Results](https://wandb.ai/pavankonam-northwestern-university/gan-dessert-project/runs/0xde0fph?nw=vz4zoiqt0mo)
+[Tensorboard Results](https://wandb.ai/pavankonam-northwestern-university/gan-dessert-project/runs/0xde0fph/workspace?nw=vz4zoiqt0mo)
